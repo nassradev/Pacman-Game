@@ -76,28 +76,41 @@ squares[pacmanStart].classList.add('pacman')
 //Key up
 document.addEventListener('keyup', function (userKey){
 if (userKey.key === 'ArrowUp'){
-console.log('key up pressed')
-}
+    if (pacmanStart - width >=0) {
+      squares[pacmanStart].classList.remove('pacman')  
+       pacmanStart -= width
+        squares[pacmanStart].classList.add('pacman')
+    }}
  })
 
 //Key down 
 document.addEventListener('keyup', function (userKey){
  if (userKey.key === 'ArrowDown'){
- console.log('key down pressed')   
-    }   
+     if (pacmanStart + width < width * width){
+squares[pacmanStart].classList.remove('pacman')
+     pacmanStart += width
+squares[pacmanStart].classList.add('pacman')
+     }}   
  })
 
 //Key left
- document.addEventListener('keyup', function (userKey){
- if (userKey.key === 'ArrowLeft'){
-  console.log('key left pressed')     
-    } 
- })
+document.addEventListener('keyup', function (userKey){
+    if (userKey.key === 'ArrowLeft'){
+ if (pacmanStart % width !== 0){
+squares[pacmanStart].classList.remove('pacman')    
+pacmanStart -=1
+    squares[pacmanStart].classList.add('pacman')
+}}
+})
 
 
 //Key right
  document.addEventListener('keyup', function (userKey){
 if (userKey.key === 'ArrowRight'){
     console.log('key right pressed')
-    }
+    if (pacmanStart  % width < width -1){
+   squares[pacmanStart].classList.remove('pacman')
+  pacmanStart +=1
+    squares[pacmanStart].classList.add('pacman')
+}}
  })
