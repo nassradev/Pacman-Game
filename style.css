@@ -36,3 +36,8 @@ html, body {
     border-radius: 7.5px;
     border: none;
 }
+.pacman-power {
+    background-color: rgb(247, 0, 255);
+    border-radius: 7.5px;
+    border: none;
+}
